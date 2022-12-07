@@ -1,0 +1,9 @@
+main: de.johann.memory.main.Main
+name: Memory
+version: 1.0
+api-version: 1.18
+author: Joadix
+description: Plugin for playing memory
+
+commands:
+   memory:
