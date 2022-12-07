@@ -42,7 +42,7 @@ public class Game {
 	}
 	
 	public ArrayList<Material> shuffleItems() {
-		// get 12 items from this list
+		// get 12 game-items from this list
 		allItems.add(Material.DIAMOND); allItems.add(Material.ENCHANTING_TABLE); allItems.add(Material.STONE_PICKAXE); allItems.add(Material.LANTERN);
 		allItems.add(Material.CROSSBOW); allItems.add(Material.ENDER_EYE); allItems.add(Material.REDSTONE_TORCH); allItems.add(Material.STICKY_PISTON);
 		allItems.add(Material.BEE_NEST); allItems.add(Material.RABBIT_FOOT); allItems.add(Material.PAINTING); allItems.add(Material.NOTE_BLOCK);
