@@ -26,14 +26,14 @@ public class GameInventory {
 	private final int gameID;
 	private int ID;
 	
-	ItemStack gray = new ItemBuilder(Material.GRAY_STAINED_GLASS_PANE).setDisplayName("§7 ").build();
-	ItemStack paperItem = new ItemBuilder(Material.PAPER).setDisplayName("§7Klicke zum Aufdecken").build();
+	ItemStack gray = new ItemBuilder(Material.GRAY_STAINED_GLASS_PANE).setDisplayName("Â§7 ").build();
+	ItemStack paperItem = new ItemBuilder(Material.PAPER).setDisplayName("Â§7Klicke zum Aufdecken").build();
 	
 	public GameInventory(Main plugin, Game game, int gameID) {
 		this.plugin = plugin;
 		this.game = game;
 		this.gameID = gameID;
-		this.inventory = Bukkit.createInventory(null, 9*5,"§8Memory Spielbrett-ID: " + gameID);
+		this.inventory = Bukkit.createInventory(null, 9*5,"Â§8Memory Spielbrett-ID: " + gameID);
 		setupInventory();
 	}
 	
@@ -45,20 +45,20 @@ public class GameInventory {
 		}
 		inventory.setItem(22, gray);
 		
-		 // create playerhead
-        ItemStack playerHead = new ItemStack(Material.LEGACY_SKULL_ITEM, 1, (short) 3);
+		// create playerhead
+        	ItemStack playerHead = new ItemStack(Material.LEGACY_SKULL_ITEM, 1, (short) 3);
 		SkullMeta playerHeadMeta = (SkullMeta) playerHead.getItemMeta();
 		playerHeadMeta.setOwner(game.getPlayer().getName());
-		playerHeadMeta.setDisplayName("§7Spieler: §b§l" + game.getPlayer().getName());
+		playerHeadMeta.setDisplayName("Â§7Spieler: Â§bÂ§l" + game.getPlayer().getName());
 		List<String> loreList = new ArrayList<>();
-		loreList.add("§7"); loreList.add("§7Finde aus den 24 Kärtchen"); loreList.add("§7durch Aufdecken jeweils ein"); loreList.add("§7Paar");
+		loreList.add("Â§7"); loreList.add("Â§7Finde aus den 24 KÃ¤rtchen"); loreList.add("Â§7durch Aufdecken jeweils ein"); loreList.add("Â§7Paar");
 		playerHeadMeta.setLore(loreList);
 		playerHead.setItemMeta(playerHeadMeta);
 		
 		// create gameitems
-		ItemStack triesItem = new ItemBuilder(Material.CHEST).setDisplayName("§7Insgesamt aufgedeckte Karten: §b§l" + game.getTries()).setLore("§7","§7Du kannst beliebig viele","§7Kärtchen aufdecken. Umso weniger","§7du am Ende gebraucht hast, umso", "§7besser!").build();
-		ItemStack foundPairsItem = new ItemBuilder(Material.PAPER).setDisplayName("§7Gefundene Paare: §b§l" + game.getFoundItems().size() + "/12").setLore("§7","§7Finde alle 12 Paare, um","§7das Spiel zu gewinnen!").build();
-		ItemStack giveUpItem = new ItemBuilder(Material.TOTEM_OF_UNDYING).setDisplayName("§c§lAufgeben & Spiel auflösen").setLore("§7","§7Du verlierst automatisch das", "§7Spiel, erhälst aber die Spiel-","§7kärtchen-Anordnung!").build();
+		ItemStack triesItem = new ItemBuilder(Material.CHEST).setDisplayName("Â§7Insgesamt aufgedeckte Karten: Â§bÂ§l" + game.getTries()).setLore("Â§7","Â§7Du kannst beliebig viele","Â§7KÃ¤rtchen aufdecken. Umso weniger","Â§7du am Ende gebraucht hast, umso", "Â§7besser!").build();
+		ItemStack foundPairsItem = new ItemBuilder(Material.PAPER).setDisplayName("Â§7Gefundene Paare: Â§bÂ§l" + game.getFoundItems().size() + "/12").setLore("Â§7","Â§7Finde alle 12 Paare, um","Â§7das Spiel zu gewinnen!").build();
+		ItemStack giveUpItem = new ItemBuilder(Material.TOTEM_OF_UNDYING).setDisplayName("Â§cÂ§lAufgeben & Spiel auflÃ¶sen").setLore("Â§7","Â§7Du verlierst automatisch das", "Â§7Spiel, erhÃ¤lst aber die Spiel-","Â§7kÃ¤rtchen-Anordnung!").build();
 		
 		// set items
 		inventory.setItem(9, playerHead);
@@ -70,9 +70,9 @@ public class GameInventory {
 	
 	public void updateInventoryStatsItems() {
 		// create gameitems
-		ItemStack triesItem = new ItemBuilder(Material.CHEST).setDisplayName("§7Insgesamt aufgedeckte Karten: §b§l" + game.getTries()).setLore("§7","§7Du kannst beliebig viele","§7Kärtchen aufdecken. Umso weniger","§7du am Ende gebraucht hast, umso", "§7besser!").build();
-		ItemStack foundPairsItem = new ItemBuilder(Material.PAPER).setDisplayName("§7Gefundene Paare: §b§l" + game.getFoundItems().size() + "/12").setLore("§7","§7Finde alle 12 Paare, um","§7das Spiel zu gewinnen!").build();
-		ItemStack foundAllPairsItem = new ItemBuilder(Material.PAPER).setDisplayName("§7Gefundene Paare: §b§l§n" + game.getFoundItems().size() + "/12").setLore("§7","§7Finde alle 12 Paare, um","§7das Spiel zu gewinnen!").build();
+		ItemStack triesItem = new ItemBuilder(Material.CHEST).setDisplayName("Â§7Insgesamt aufgedeckte Karten: Â§bÂ§l" + game.getTries()).setLore("Â§7","Â§7Du kannst beliebig viele","Â§7KÃ¤rtchen aufdecken. Umso weniger","Â§7du am Ende gebraucht hast, umso", "Â§7besser!").build();
+		ItemStack foundPairsItem = new ItemBuilder(Material.PAPER).setDisplayName("Â§7Gefundene Paare: Â§bÂ§l" + game.getFoundItems().size() + "/12").setLore("Â§7","Â§7Finde alle 12 Paare, um","Â§7das Spiel zu gewinnen!").build();
+		ItemStack foundAllPairsItem = new ItemBuilder(Material.PAPER).setDisplayName("Â§7Gefundene Paare: Â§bÂ§lÂ§n" + game.getFoundItems().size() + "/12").setLore("Â§7","Â§7Finde alle 12 Paare, um","Â§7das Spiel zu gewinnen!").build();
 		
 		// set items
 		if(game.getFoundItems().size() >= 12) {
@@ -133,24 +133,24 @@ public class GameInventory {
 				ItemStack itemStack = new ItemStack(game.getGameItemsSlots().get(i));
 				ItemMeta itemStackMeta = itemStack.getItemMeta();
 				itemStackMeta.addEnchant(Enchantment.DAMAGE_ALL, 1, true);
-				itemStackMeta.setDisplayName("§aItem gefunden");
+				itemStackMeta.setDisplayName("Â§aItem gefunden");
 				itemStackMeta.addItemFlags(ItemFlag.HIDE_ENCHANTS);
 				itemStack.setItemMeta(itemStackMeta);
 				
 				game.getGameInventory().setItem(game.calculateIndexToSlot(i), itemStack);
 				
 			} else {
-				setItem(game.calculateIndexToSlot(i), new ItemBuilder(game.getGameItemsSlots().get(i)).setDisplayName("§cItem nicht gefunden").build());
+				setItem(game.calculateIndexToSlot(i), new ItemBuilder(game.getGameItemsSlots().get(i)).setDisplayName("Â§cItem nicht gefunden").build());
 			}
 			
 		}
-		ItemStack newGame = new ItemBuilder(Material.LIME_DYE).setDisplayName("§a§lNeues Spiel").setLore("§7","§7Starte ein neues Memory-","§7Spielbrett mit einer neuen","§7Anordnung").build();
+		ItemStack newGame = new ItemBuilder(Material.LIME_DYE).setDisplayName("Â§aÂ§lNeues Spiel").setLore("Â§7","Â§7Starte ein neues Memory-","Â§7Spielbrett mit einer neuen","Â§7Anordnung").build();
 		setItem(35, newGame);
 	}
 	
 	public void checkIfPaperItem(int i, int slot) {
 		if(game.getFoundItems().contains(game.getGameItemsSlots().get(i))) {
-			inventory.setItem(slot, new ItemBuilder(game.getGameItemsSlots().get(i)).setDisplayName("§bBereits gefunden").build());
+			inventory.setItem(slot, new ItemBuilder(game.getGameItemsSlots().get(i)).setDisplayName("Â§bBereits gefunden").build());
 		} else {
 			if(inventory.getItem(slot) != null) return;
 			inventory.setItem(slot, paperItem);
